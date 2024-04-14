@@ -1,6 +1,6 @@
 {{!< default}}
 
-<section class="gh-about gh-outer{{#match @custom.header_section_layout "!=" "Typographic profile"}}{{#unless @site.cover_image}} no-image{{/unless}}{{else}}{{#unless @site.icon}} no-image{{/unless}}{{/match}}">
+{{!-- <section class="gh-about gh-outer{{#match @custom.header_section_layout "!=" "Typographic profile"}}{{#unless @site.cover_image}} no-image{{/unless}}{{else}}{{#unless @site.icon}} no-image{{/unless}}{{/match}}">
     <div class="gh-about-inner gh-inner">
         {{#match @custom.header_section_layout "!=" "Typographic profile"}}
             {{#if @site.cover_image}}
@@ -43,14 +43,16 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 <main class="gh-main gh-outer">
     <div class="gh-feed gh-inner">
-        {{#foreach posts}}
-            {{> "loop"}}
-        {{/foreach}}
+        <div class="mx-auto grid max-w-4xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            {{#foreach posts}}
+                {{> "loop"}}
+            {{/foreach}}
+        </div>
     </div>
 </main>
 
-{{#contentFor "body_class"}}{{#match @custom.header_section_layout "Side by side"}} has-side-about{{/match}}{{#match @custom.header_section_layout "Large background"}}{{#if @site.cover_image}} is-head-transparent has-background-about{{else}} has-side-about{{/if}}{{/match}}{{#match @custom.header_section_layout "Typographic profile"}}{{#if @site.icon}} has-typographic-about{{else}} has-side-about{{/if}}{{/match}}{{/contentFor}}
+{{!-- {{#contentFor "body_class"}}{{#match @custom.header_section_layout "Side by side"}} has-side-about{{/match}}{{#match @custom.header_section_layout "Large background"}}{{#if @site.cover_image}} is-head-transparent has-background-about{{else}} has-side-about{{/if}}{{/match}}{{#match @custom.header_section_layout "Typographic profile"}}{{#if @site.icon}} has-typographic-about{{else}} has-side-about{{/if}}{{/match}}{{/contentFor}} --}}

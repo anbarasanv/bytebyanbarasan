@@ -2,8 +2,25 @@
 
 <main class="gh-main gh-outer">
     {{#author}}
-        <section class="gh-article gh-inner">
-            <header class="gh-article-header">
+        <section class="gh-inner pb-16 mb-24 border-b border-black">
+            <div class="justify-center items-center flex-col flex gap-6">
+                <div class="avatar">
+                    <div class="w-40 rounded-full ring ring-black ring-offset-base-100 ring-offset-2">
+                        <img src="{{img_url profile_image size="s"}}" alt="{{name}}" />
+                    </div>
+                </div>
+                <div class="border-t border-black py-4 flex gap-4 justify-center items-center">
+                    <div class="font-header font-semibold text-4xl">
+                        {{name}}
+                    </div>
+                    <div class="flex gap-4 border-l border-black px-4">
+                        <a class="hover:bg-black hover:text-white py-5 px-4 badge badge-outline text-2xl" href="{{twitter_url}}" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a class="hover:bg-black hover:text-white py-5 px-4 badge badge-outline text-2xl" href="https://www.linkedin.com/in/anbarasan-reachme/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            {{!-- <header class="gh-article-header">
                 {{#if profile_image}}
                     <img class="gh-author-image" src="{{img_url profile_image size="s"}}" alt="{{name}}">
                 {{/if}}
@@ -27,10 +44,11 @@
                         <a class="gh-author-social-link" href="{{facebook_url}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
                     {{/if}}
                 </div>
-            </footer>
+            </footer> --}}
         </section>
     {{/author}}
-    <div class="gh-feed{{#match @custom.header_section_layout "!=" "Large background"}} gh-inner{{/match}}">
+    
+    <div class="mx-auto grid max-w-4xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         {{#foreach posts}}
             {{> "loop"}}
         {{/foreach}}

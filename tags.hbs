@@ -2,13 +2,27 @@
 
   <main class="gh-main gh-outer">
     <div class="gh-feed gh-inner">
-      {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+      <div class="mx-auto grid max-w-4xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+        {{#foreach tags}}
+          <a href='{{ url }}'>
+            <div class="font-poppins font-semibold flex justify-center gap-x-4 items-center bg-cover bg-center h-96  rounded-2xl shadow-lg hover:shadow-2xl bg-black/50 backdrop-blur-sm bg-blend-lighten hover:bg-blend-darken" style="background-image: url('{{feature_image}}')">
+              <span class="hover:text-white text-6xl py-10 px-8 badge bg-white text-black hover:backdrop-blur-sm hover:bg-white/30 rounded-xl">{{ name }}</span>
+              <span class="hover:text-white text-6xl py-10 px-8 badge bg-white text-black hover:backdrop-blur-sm hover:bg-white/30 rounded-full">{{ count.posts }}</span>
+            </div>
+          </a>
+        {{/foreach}}
+        {{/get}}
+      </div>
+    </div>
+  </main>
+
+
+        {{!-- {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
       {{#foreach tags}}
           <a href='{{ url }}'>
           <h2>{{ name }} <small>({{ count.posts }})</small></h2>
           <img src="{{feature_image}}" alt="Tag Image">
           </a>
       {{/foreach}}
-      {{/get}}
-    </div>
-  </main>
+      {{/get}} --}}

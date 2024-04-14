@@ -40,7 +40,7 @@ function hbs(done) {
 function css(done) {
   pump(
     [
-      src("assets/css/screen.css", { sourcemaps: true }),
+      src("assets/css/*.css", { sourcemaps: true }),
       postcss([easyimport, autoprefixer(), tailwind(), cssnano()]),
       dest("assets/built/", { sourcemaps: "." }),
       livereload(),

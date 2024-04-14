@@ -3,6 +3,49 @@
 <main class="gh-main gh-outer">
     <div class="gh-inner">
         {{#post}}
+            <div class="flex flex-col h-[30rem] border border-black rounded-3xl items-center">
+                <div class="flex items-center justify-center gap-8 sm:gap-4 w-[85%] py-6 px-6">
+                    <div class="flex gap-2 badge py-7 px-7 font-header md:text-2xl sm:text-sm bg-black text-white">
+                        <span><i class="fa-solid fa-hashtag"></i></span>
+                        {{#if primary_tag}}
+                            <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>                              
+                        {{/if}}
+                    </div>
+                    <div class="badge py-7 px-7 bg-black text-white md:text-2xl sm:text-sm flex gap-2 font-header">
+                        <span class=""><i class="fa-regular fa-user"></i></span>
+                        {{#primary_author}}
+                        <a href="{{url}}">{{name}}</a>
+                        {{/primary_author}}
+                    </div>
+                    <div class="badge badge-outline md:text-2xl sm:text-xs flex gap-2 font-header py-6 px-6">
+                        <span class=""><i class="fa-regular fa-calendar"></i></span>
+                        <time class="" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                    </div>
+                    <div class="badge badge-outline md:text-2xl sm:text-sm flex gap-2 font-header py-6 px-6">
+                        <span class=""><i class="fa-regular fa-clock"></i></span>
+                        <span class="">{{reading_time minute="1 Min Read" minutes="% Min Read"}}</span>
+                    </div>
+                </div>
+                <div class="w-[85%] py-6 px-6 ">
+                    <h2 class="text-5xl text-center font-header font-semibold ">{{title}}</h2>
+                </div>
+            </div>
+        <div class="top-[-12rem] relative">
+            <div class="w-full flex flex-col items-center justify-center gap-16">
+                {{!-- <div class="w-[85%] h-128">
+                    <img class="rounded-3xl object-cover w-full h-full" src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg" alt="">
+                </div> --}}
+                {{#if feature_image}}
+                    {{> "post-feature-image"}}
+                {{/if}}
+                
+                {{#if custom_excerpt}}
+                    <p class="w-[90%]">{{custom_excerpt}}</p>
+                {{/if}}
+            </div>
+            <div>
+            </div>
+        </div>
             <article class="gh-article {{post_class}}">
                 {{#if feature_image}}
                     <header class="gh-article-header gh-canvas">
@@ -10,7 +53,7 @@
                         {{#if custom_excerpt}}
                             <p class="gh-article-excerpt">{{custom_excerpt}}</p>
                         {{/if}}
-                        {{> "feature-image"}}
+                        {{> "post-feature-image"}}
                     </header>
                 {{/if}}
 
