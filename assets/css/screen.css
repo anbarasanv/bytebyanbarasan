@@ -1,5 +1,6 @@
 @import "@tryghost/shared-theme-assets/assets/css/v1/screen.css";
 @import "fonts.css";
+@import "prism.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,7 +34,8 @@ body {
 }
 
 .gh-main {
-  padding-top: clamp(4.8rem, 4rem + 2.5vw, 8rem);
+  padding-top: clamp(4.8rem, 2rem, 8rem);
+  padding-bottom: 2rem;
 }
 
 figcaption {
@@ -49,13 +51,67 @@ hr {
   background-color: var(--color-border);
 }
 
-.gh-content h2 {
+/* .gh-content h2 {
   font-size: 2.25em;
   letter-spacing: -0.03em;
 }
 
 .gh-content h3 {
   font-size: 1.6em;
+} */
+
+/* Heading Styles */
+#post-content h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* margin-top: 2.5rem !important; */
+  font-family: "Outfit";
+}
+#post-content h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+#post-content h2 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#post-content h3 {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+#post-content h4 {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+#post-content h5 {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+#post-content h6 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Paragraph Styles */
+#post-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  width: 70%;
+  margin: 0 auto; /* Align in the center */
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  font-family: "JetBrains Mono";
+  font-justify: ;
 }
 
 .gh-canvas {

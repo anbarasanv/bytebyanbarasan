@@ -10,15 +10,20 @@ module.exports = {
       poppins: ["Poppins", "sans-serif"],
       fraunces: ["Fraunces", "serif"],
       firacode: ["Fira Code", "monospace"],
+      jetmono: ["JetBrains Mono", "monospace"],
     },
     extend: {
       spacing: {
         128: "32rem",
         144: "36rem",
       },
+      colors: {
+        secondaryBlack: "#212529",
+        backgroundGrey: "#e9ecef",
+      },
     },
     screens: {
-      sm: "425px",
+      sm: "480px",
       md: "768px",
       lg: "1024px",
       xl: "1440px",

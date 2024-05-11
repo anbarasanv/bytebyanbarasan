@@ -1,15 +1,109 @@
 {{!< default}}
 
-<div class="hero min-h-[70vh] items-baseline">
-  <div class="hero-content flex-col lg:flex-row-reverse max-w-[80%] gap-8">
-    <img src="assets/images/anba.png" class="xl:max-w-2xl lg:max-w-xl md:max-w-md sm:max-w-sm rounded-lg" />
-    <div>
-      <h1 class="xl:text-9xl lg:text-8xl md:text-6xl sm:text-5xl hero-header">HELLO, <br/>I'M ANBARASAN</h1>
-      <p class="py-6 text-5xl sm:text-4xl font-header  font-[300]">WELCOME TO MY BLOG.</p>
-      <p class="py-6 hero-text">With more than 8 years of experience in software development, I am dedicated to merging innovation with precision to eliminate uncertainties. I am deeply passionate about crafting impactful software solutions that bring me joy.</p>
-      <p class="py-6 text-4xl sm:text-3xl hero-text">This blog will cover topics such as technology trends, data visualization showcasing fascinating data, artistic creations, and more. </p>
-      <a class="text-2xl btn btn-active btn-neutral font-header bg-black text-white" role="button" href="/blog/">Get started <i class="fa fa-arrow-right"></i></a>
-      {{!-- <a role="button" href="/about/"class="btn btn-primary">Get Started<a/> --}}
+<main class="gh-main gh-outer">
+  <div class="gh-inner">
+    <div class="flex flex-wrap gap-8">
+      {{#get
+          "posts" limit="1" include="tags" order="published_at desc"
+        }}
+      {{#foreach posts}}
+        <div class="flex-1">
+              <div class="flex gap-8 font-header">
+                <div class="flex gap-2">
+                  {{#if primary_tag}}
+                    <a
+                      class="flex gap-2 badge py-5 px-3 bg-black text-white text-[1.5rem]"
+                      href="{{primary_tag.url}}"
+                    ><span>{{> "icons/bookmark-solid" class="h-[1.5rem] w-[1.5rem]" }}</span> <span>{{primary_tag.name}}</span></a>                              
+                  {{/if}}
+                </div>
+                <div class="flex gap-2 text-gray-500">
+                  <span>{{> "icons/clock" class="h-[2.5rem] w-[2.5rem]" }}</span>
+                  <span class="leading-1 text-[1.8rem]">{{reading_time
+                      minute="1 Min Read"
+                      minutes="% Min Read"
+                    }}</span>
+                </div>
+                <div class="flex gap-2 text-gray-500">
+                  <span>{{> "icons/calendar" class="h-[2.5rem] w-[2.5rem]" }}</span>
+                  <time
+                    class="leading-1 text-[1.8rem]"
+                    datetime="{{date format="YYYY-MM-DD"}}"
+                  >{{date}}</time>
+                </div>
+              </div>
+              <div class="mt-8">
+                <h1 class="text-5xl font-poppins font-semibold">{{title}}</h1>
+              </div>
+              {{#if custom_excerpt}}
+                <p class="mt-8 mb-8 text-3xl font-firacode">{{custom_excerpt}}</p>
+              {{/if}}
+              <a class="flex gap-4 font-header rounded-xl py-2 px-4 bg-black text-white text-[1.5rem] w-[13rem]" href="{{url}}">
+                <span class="">Read More</span>
+                <span>{{> "icons/long-right-arrow" class="w-[2.5rem] h-[2.5rem]" }} </span>
+              </a>
+        </div>
+        {{#if feature_image}}
+          <div class="flex-1 sm:flex-0 bg-cover bg-center bg-no-repeat rounded-2xl" style="background-image: url({{img_url feature_image size="m"}});">
+          </div>
+        {{else}}
+          <div class="bg-slate-500 flex-1 bg-cover bg-center bg-no-repeat rounded-2xl"></div>
+        {{/if}}
+      {{/foreach}}
+      {{/get}}
+    </div>
+    {{!-- Bottom section --}}
+    <div class="p-8 rounded-xl mt-8 w-full bg-backgroundGrey">
+      <h2 class="mb-8 text-5xl font-poppins">Latest Posts</h2>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-8 "
+      >
+        {{#get
+          "posts" limit="5" include="tags" order="published_at desc"
+        }}
+          {{#foreach posts}}
+            {{#unless @first}}
+              <div class="flex-1">
+                <figure class="object-cover w-full">
+                  {{#if feature_image}}
+                    <a href="{{url}}">
+                      <img
+                        class="rounded-2xl"
+                        srcset="{{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="m"}} 720w,
+                                {{img_url feature_image size="l"}} 960w,
+                                {{img_url feature_image size="xl"}} 1200w,
+                                {{img_url feature_image size="xxl"}} 2000w"
+                        sizes="(max-width: 1200px) 100vw, 1200px"
+                        src="{{img_url feature_image size="m"}}"
+                        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}">
+                    </a>
+                  {{/if}}
+                </figure>
+                <div class="mt-2">
+                  <h3 class="text-2xl font-poppins font-semibold"><a href="{{url}}">{{title}}</a></h3>
+                </div>
+                <div class="flex gap-6 mt-4 font-header">
+                  <div class="flex gap-2 text-gray-500 leading-relaxed">
+                    <span>{{> "icons/clock" class="h-[1.8rem] w-[1.8rem]" }}</span>
+                    <span class="leading-1 text-[1.2rem]">{{reading_time
+                        minute="1 Min Read"
+                        minutes="% Min Read"
+                      }}</span>
+                  </div>
+                  <div class="flex gap-2 text-gray-500 leading-relaxed">
+                    <span>{{> "icons/calendar" class="h-[1.8rem] w-[1.8rem]" }}</span>
+                    <time
+                      class="leading-1 text-[1.2rem]"
+                      datetime="{{date format="YYYY-MM-DD"}}"
+                    >{{date}}</time>
+                  </div>
+                </div>
+              </div>
+            {{/unless}}
+          {{/foreach}}
+        {{/get}}
+      </div>
     </div>
   </div>
-</div>
+</main>
