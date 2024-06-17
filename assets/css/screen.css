@@ -102,17 +102,9 @@ h6 {
 
 /* Paragraph Styles */
 #post-content {
-  text-align: justify;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  width: 50%;
-  margin: 0 auto; /* Align in the center */
   font-size: 1em;
   line-height: 1.6;
-  margin-bottom: 1em;
   font-family: "JetBrains Mono";
-  font-justify: ;
 }
 
 .gh-canvas {
@@ -1014,7 +1006,7 @@ h6 {
 #post-content ol li::before {
   content: counter(steps);
   margin-right: 0.5rem;
-  background: #0d0d0d;
+  background: black;
   color: white;
   width: 1.2em;
   height: 1.2em;
@@ -1027,13 +1019,13 @@ h6 {
   content: none;
 }
 #post-content ol ol li::before {
-  background: #3b3c40;
+  background: #595959;
 }
 
 #post-content ul li::before {
   content: "*";
   margin-right: 0.5rem;
-  background: #0d0d0d;
+  background: black;
   color: white;
   width: 1.2em;
   height: 1.2em;
@@ -1044,5 +1036,18 @@ h6 {
 }
 
 #post-content ul ul li::before {
-  background: #3b3c40;
+  background: #595959;
+}
+
+/* Header menu styles */
+.gh-head-menu .nav a {
+  padding: 0.5rem 1rem;
+}
+
+.gh-head-menu .nav .nav-current a,
+.gh-head-menu .nav a:hover {
+  border-radius: 0.5rem;
+  color: white;
+  background: black;
+  opacity: 1;
 }
