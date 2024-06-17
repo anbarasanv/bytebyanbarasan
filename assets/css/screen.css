@@ -102,10 +102,11 @@ h6 {
 
 /* Paragraph Styles */
 #post-content {
+  text-align: justify;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  width: 70%;
+  width: 50%;
   margin: 0 auto; /* Align in the center */
   font-size: 1em;
   line-height: 1.6;
@@ -996,4 +997,52 @@ h6 {
 
 .gh-copyright {
   font-size: 1.4rem;
+}
+
+/* html lists styles */
+#post-content ol,
+#post-content ul {
+  list-style: none;
+  counter-reset: steps;
+}
+#post-content ol li {
+  counter-increment: steps;
+}
+#post-content ol li::marker {
+  content: none;
+}
+#post-content ol li::before {
+  content: counter(steps);
+  margin-right: 0.5rem;
+  background: #0d0d0d;
+  color: white;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  line-height: 1.2em;
+}
+#post-content ol ol li::marker {
+  content: none;
+}
+#post-content ol ol li::before {
+  background: #3b3c40;
+}
+
+#post-content ul li::before {
+  content: "*";
+  margin-right: 0.5rem;
+  background: #0d0d0d;
+  color: white;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  line-height: 1.2em;
+}
+
+#post-content ul ul li::before {
+  background: #3b3c40;
 }

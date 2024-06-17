@@ -48,16 +48,21 @@
                 </div>
             {{/if}}
             <div class="flex items-center justify-center font-header gap-[60%] my-8">
-                <div class="gh-navigation-previous btn btn-outline text-xl">
-                    {{#prev_post}}
+                {{#prev_post}}
+                    {{#if url}}
+                    <div class="gh-navigation-previous btn btn-outline text-xl">
                         <a class="gh-navigation-link" href="{{url}}">{{> "icons/long-left-arrow"}} Previous</a>
-                    {{/prev_post}}
-                </div>
-                <div class="gh-navigation-next btn btn-outline text-xl">
-                    {{#next_post}}
+                    </div>
+                    {{/if}}
+                {{/prev_post}}
+                
+                {{#next_post}}
+                    {{#if url}}
+                    <div class="gh-navigation-next btn btn-outline text-xl">
                         <a class="gh-navigation-link" href="{{url}}">Next {{> "icons/long-right-arrow"}}</a>
-                    {{/next_post}}
-                </div>
+                    </div>
+                    {{/if}}
+                {{/next_post}}
             </div>
         {{/post}}
     </div>

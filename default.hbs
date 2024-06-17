@@ -94,10 +94,11 @@
 
     <footer class="footer footer-center p-4 text-base-content">
         <aside>
-            <nav class="gh-foot-menu">
-                {{navigation type="secondary"}}
-            </nav>
-
+            {{#unless @member}}
+                <nav class="gh-foot-menu">
+                    {{navigation type="secondary"}}
+                </nav>
+            {{/unless}}
             <div class="gh-copyright pt-6">
                 {{#unless @custom.footer_text}}
                     {{@site.title}} © {{date format="YYYY"}}. All rights reserved</a>
