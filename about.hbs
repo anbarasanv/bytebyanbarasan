@@ -1,11 +1,13 @@
 {{!< default}}
 
-<div class="hero min-h-[80dvh] items-baseline">
-  <div class="hero-content flex-col lg:flex-row-reverse max-w-[80%] gap-8">
-    <img
-      src="{{asset 'images/anba.png'}}"
-      class="xl:max-w-2xl lg:max-w-xl md:max-w-md sm:max-w-sm rounded-lg"
-    />
+<div class="gh-main gh-outer">
+  <div class="h-screen flex flex-col lg:flex-row-reverse max-w-full gap-8">
+    <div>
+      <img
+        src="{{asset 'images/anba.jpeg'}}"
+        class="xl:max-w-2xl lg:max-w-xl md:max-w-md sm:max-w-sm rounded-lg"
+      />
+    </div>
     <div>
       <h1
         class="xl:text-9xl lg:text-8xl md:text-6xl sm:text-5xl hero-header"
@@ -20,12 +22,142 @@
         such as technology trends, data visualization showcasing fascinating
         data, artistic creations, and more.
       </p>
-      <a
-        class="text-2xl btn btn-active btn-neutral font-header bg-black text-white"
-        role="button"
-        href="/blog/"
-      >Get started <i class="fa fa-arrow-right"></i></a>
+      <p class="py-16"><a
+          class="text-2xl btn btn-active btn-neutral font-header bg-black text-white"
+          role="button"
+          href="#section2"
+        >What My Colleagues Say ?<i
+            class="fa-regular fa-hand-point-down"
+          ></i></a></p>
       {{! <a role="button" href="/about/"class="btn btn-primary">Get Started<a/> }}
     </div>
   </div>
+  <div class="h-full py-16" id="section2">
+    <div>
+      <div class="flex justify-center items-center min-h-[75vh]">
+        <div class="glide w-full max-w-[75%]">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/ravibanner.png'}}"
+                  alt="monica recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/monicabanner.png'}}"
+                  alt="monica recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/hemabanner.png'}}"
+                  alt="hema recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/koushikbanner.png'}}"
+                  alt="koushik recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/senthilbanner.png'}}"
+                  alt="koushik recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/amitbanner.png'}}"
+                  alt="koushik recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/ivanbanner.png'}}"
+                  alt="ivan recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/muthukumarbanner.png'}}"
+                  alt="muthu recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/shubhambanner.png'}}"
+                  alt="shubham recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/prachibanner.png'}}"
+                  alt="prachi recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/charanbanner.png'}}"
+                  alt="charan recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/shivbanner.png'}}"
+                  alt="shiv recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/ankitabanner.png'}}"
+                  alt="Ankita recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/vickeybanner.png'}}"
+                  alt="Vickey recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/sumitbanner.png'}}"
+                  alt="sumit recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/dharabanner.png'}}"
+                  alt="sumit recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/nanaiahbanner.png'}}"
+                  alt="sumit recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/ignaciobanner.png'}}"
+                  alt="ignacio recommends"
+                  class="w-full h-auto"
+                /></li>
+              <li class="glide__slide"><img
+                  src="{{asset 'images/testimonials/rupalibanner.png'}}"
+                  alt="ignacio recommends"
+                  class="w-full h-auto"
+                /></li>
+              <!-- Add more slides as needed -->
+            </ul>
+          </div>
+          <div class="glide__arrows" data-glide-el="controls">
+            <button
+              class="glide__arrow glide__arrow--left"
+              data-glide-dir="<"
+            ><i class="fa-solid fa-arrow-left"></i></button>
+            <button
+              class="glide__arrow glide__arrow--right"
+              data-glide-dir=">"
+            ><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.querySelector('a[href="#section2"]').addEventListener('click',
+    function(e) { e.preventDefault();
+    document.querySelector('#section2').scrollIntoView({ behavior: 'smooth' });
+    }); document.addEventListener('DOMContentLoaded', function () { new
+    Glide('.glide', { type: 'carousel', autoplay: 5000, animationDuration: 800,
+    animationTimingFunc: 'ease-in-out', }).mount(); });
+  </script>
 </div>

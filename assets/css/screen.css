@@ -699,7 +699,7 @@ h6 {
   font-size: clamp(4rem, 2.86vw + 2.63rem, 7.2rem);
   font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: normal;
 }
 
 .page-template .no-image .gh-article-title {
@@ -1101,4 +1101,25 @@ div.code-toolbar
 div.code-toolbar > .toolbar.toolbar > .toolbar-item > span::before {
   content: "</> ";
   font-style: oblique;
+}
+
+/* Glider plugin overrides
+ * https://github.com/glidejs/glide
+ * This is the second-most popular plugin
+ * Used in conjunction with Show Language, Copy to Clipboard Button, and/or Download Button
+ */
+
+.glide__slide img {
+  width: 100%;
+  height: auto;
+}
+.glide__arrow {
+  color: black !important;
+  border-radius: 50% !important;
+}
+.glide__arrow--left {
+  left: -2rem !important;
+}
+.glide__arrow--right {
+  right: -8rem !important;
 }
